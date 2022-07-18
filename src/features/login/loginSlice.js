@@ -25,7 +25,7 @@ export const loginSlice = createSlice({
       })
       .addCase(loginAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.value = action.payload;
+        state.logged = action.payload;
       });
   },
 });

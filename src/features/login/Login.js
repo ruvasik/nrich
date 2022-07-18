@@ -6,9 +6,11 @@ export function Login() {
   const dispatch = useDispatch();
   const isLogged = useSelector(selectLogged);
 
+  console.log('isLogged', isLogged);
+
   useEffect(() => {
     localStorage.setItem('logged', isLogged);
-  }, isLogged);
+  }, [isLogged]);
 
   return (
     <div>

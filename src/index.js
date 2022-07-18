@@ -12,27 +12,21 @@ import {
   Route,
 } from "react-router-dom";
 
-import global from './global.module.css';
 import {Nav} from "./Nav";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-console.log(global);
-
-
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <Nav />
+  <Provider store={store}>
+    <BrowserRouter>
+      <Nav />
 
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/news" element={<News />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/news" element={<News />} />
+      </Routes>
+    </BrowserRouter>
+  </Provider>
 );
