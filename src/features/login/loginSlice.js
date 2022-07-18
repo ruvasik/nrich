@@ -2,14 +2,17 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { authLogin } from './loginAPI';
 
 const initialState = {
-  logged: sessionStorage.getItem('logged') === 'yes',
+  logged: sessionStorage.getItem('logged') === 'yes' ? 'yes': null,
+  status: null,
 };
 
 export const loginAsync = createAsyncThunk(
   'login/authLogin',
-  async (login, password) => {
-    const response = await authLogin(login, password);
-    return response.data;
+  async (data) => {
+    const response = await authLogin(data);
+    if (response.status > 399 && response.status < 500) return 'no';
+    else if (response.status === 200) return 'yes';
+    else return null;
   }
 );
 
@@ -25,6 +28,7 @@ export const loginSlice = createSlice({
       })
       .addCase(loginAsync.fulfilled, (state, action) => {
         state.status = 'idle';
+        console.log('11', action);
         state.logged = action.payload;
       });
   },

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {getNewsAsync, selectNews} from "./newsSlice";
+import {getNewsAsync, selectNews, selectStatus} from "./newsSlice";
 
 import styles from './News.module.css';
 import moment from "moment";
@@ -8,13 +8,16 @@ import moment from "moment";
 export function News() {
   const dispatch = useDispatch();
   const news = useSelector(selectNews);
+  const isLoading = useSelector(selectStatus);
 
   useEffect(() => {
-    dispatch(getNewsAsync());
+    if (news.length === 0)
+      dispatch(getNewsAsync());
   }, []);
 
   return (
     <div>
+      { isLoading && 'Loading...'}
       {
         news.map(item => (
           <div key={item.url} className={styles.article}>

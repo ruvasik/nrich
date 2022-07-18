@@ -3,6 +3,7 @@ import { getNews } from './newsAPI';
 
 const initialState = {
   news: [],
+  status: null,
 };
 
 export const getNewsAsync = createAsyncThunk(
@@ -31,5 +32,6 @@ export const newsSlice = createSlice({
 });
 
 export const selectNews = (state) => state.news.news;
+export const selectStatus = (state) => state.news.status === 'loading';
 
 export default newsSlice.reducer;
