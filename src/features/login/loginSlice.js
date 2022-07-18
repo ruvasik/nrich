@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { authLogin } from './loginAPI';
 
 const initialState = {
-  logged: !!localStorage.getItem('logged'),
+  logged: sessionStorage.getItem('logged') === 'yes',
 };
 
 export const loginAsync = createAsyncThunk(

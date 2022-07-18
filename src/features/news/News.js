@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {getNewsAsync, selectNews} from "./newsSlice";
 
-import globals from '../../global.module.css';
 import styles from './News.module.css';
 import moment from "moment";
 
