@@ -1,28 +1,10 @@
-import React, {useCallback, useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, {useEffect} from 'react';
+import { useSelector } from 'react-redux';
 import {selectLogged} from "../login/loginSlice";
 
-import styles from './Profile.module.css';
 import {useNavigate} from "react-router-dom";
 
-const renderForm = (onSubmit, status) => (
-  <section className={styles.section}>
-    { status === 'no' && 'Имя пользователя или пароль введены неверно' }
-    <form className={styles.form} onSubmit={onSubmit}>
-      <div className={styles.row}>
-        <input type="text" name="email" className={styles.input} />
-      </div>
-      <div className={styles.row}>
-        <input type="password" name="password" className={styles.input} />
-      </div>
-
-      <input type="submit" value="Profile" />
-    </form>
-  </section>
-)
-
 export function Profile() {
-  const dispatch = useDispatch();
   const isLogged = useSelector(selectLogged);
   const navigate = useNavigate();
 
@@ -35,7 +17,8 @@ export function Profile() {
 
   return (
     <div>
-
+      <iframe src="//coub.com/embed/148lu6?muted=false&autostart=false&originalSize=false&startWithHD=false"
+              allowFullScreen frameBorder="0" width="480" height="480" allow="autoplay"></iframe>
     </div>
   );
 }
