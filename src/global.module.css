@@ -6,4 +6,10 @@
 
 .nav {
   display: flex;
+  margin: 10px auto;
+}
+
+.nav a {
+  display: inline-block;
+  margin: 0 5px;
 }
