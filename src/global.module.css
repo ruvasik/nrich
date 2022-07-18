@@ -4,10 +4,6 @@
   justify-content: center;
 }
 
-.link {
-  color: #000;
-}
-
-.link:active {
-  color: #c00;
+.nav {
+  display: flex;
 }
