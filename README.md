@@ -1,46 +1,47 @@
-# Getting Started with Create React App and Redux
+Задание состоит из двух частей:
+1. React приложение, для оценки Frontend навыков
+2. Теоретические вопросы для оценки навыков разработки API
+   Как оформить результат: лучше оформить в виде приватного git репозитория и расшарить нам доступы.
+   Как будет оцениваться задание: объективная оценка состоит в том, что должны быть выполнены все пункты перечисленные в задании. Субъективная оценка будет выставлена текущими разработчиками на основании того как именно сделана реализация, что за подходы предложены в теоретических задачах.
+   Реализовать приложение, которое умеет показывать следующие страницы:
+   ● / — главная
+   ● /login — страница ввода логина и пароля
+   ● /news — страница с новостями (контент новостей должен получаться из API)
+   Для наполнения можно в рамках выполнения задания сгенерировать произвольный контент из сотни статичных новостей любым методом, например используя rss фид в качестве источника и положить их в seed
+   ● /profile — страница с отображением авторизованного username и произвольным текстом, недоступная без авторизации
+   На сайте, в шапке или подвале реализовать ссылки:
+   ● На главную (/)
+   ● Новости (/news). Страница новостей с пагинацией. Новости должны получаться
+   из API (храниться в БД)
+   ● Профиль (/profile)
+   Если пользователь кликает на страницу «профиля» и он не «авторизован» — перекидывать на страницу /login
+   Форма входа (/login) принимает данные:
+   username: Test
+   password: 123456789
+   Если введены другие данные, то показывается сообщение: «Имя пользователя или пароль введены неверно». Данные для входа должны проверяться используя вызов к API.
+   Если введены корректные данные, то перебрасывать на страницу /profile.
+   Условия выполнения:
+   N.Rich Technologies Inc. | Kampinkuja 2, 00100 Helsinki, Finland https://n.rich | Linkedin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+3. Проект должен собираться на Webpack, библиотеки устанавливаться через npm или yarn.
+4. Задание выполнить на React, все необходимое прокидывать через Redux.
+5. Информацию об авторизации пользователя достаточно хранить в localStorage в
+   виде true/false.
+6. Оформление сделать достаточно комфортным для просмотра в браузере,
+   приветствуется использование bootstrap.
+   Предложить структуру API, для отображения и работы следующей страницы
+   ![Скриншот](readme.png "Скриншот")
+   На скриншоте макет страницы, используемой для получения website тэга (кода, который устанавливается на страницы наших клиентов). Нужно продумать и приложить структуру API (достаточно описания c примерами, но подойдёт любой формат) для этой страницы.
+   Функционал у неё следующий:
+   ● При заходе на страницу пользователю должен отображаться код website tag (он
+   всегда существует)
+   ● Справа от кода на страниц отображается таблица со статистикой по текущему
+   установленному коду (он может использоваться в 2х разных вариантах, поэтому
+   статистика есть по Cookieless и по Standard)
+   ● При нажатии на EXPORT должен скачиваться файл с кодом website tag (тот же
+   код что отображается в textarea
+   Использование DS кода Express приложением
+   В рамках многих задач мы используем наработки DS инженеров, которые оформлены в виде cli python скриптов, получающих на вход json/csv файлы и на выходе
+   N.Rich Technologies Inc. | Kampinkuja 2, 00100 Helsinki, Finland https://n.rich | Linkedin
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+генерирующие csv файлы с результатами. Скрипты потребляют довольно много CPU / Memory. Стоит задача неким образом получать данные из модели в UI, используя имеющееся Express приложение на бэкенде (оно осуществляет авторизацию / сериализацию и т.п.). Каким образом бы вы решили эту задачу? В задаче нет ограничений по инструментарию

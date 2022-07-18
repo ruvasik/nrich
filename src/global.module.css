@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  color: #000;
+}
+
+.link:active {
+  color: #c00;
+}
