@@ -1,0 +1,19 @@
+.article {
+  margin: 5px auto 15px;
+}
+
+.date {
+  margin: 0;
+}
+
+.author {
+  margin: 0;
+}
+
+.title {
+  margin: 5px auto;
+}
+
+.description {
+  margin: 5px auto 30px;
+}
