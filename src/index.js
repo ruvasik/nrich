@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import App from './App';
+import Home from './features/Home';
 import './index.css';
 import {Login} from "./features/login/Login";
 import {News} from "./features/news/News";
@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 
 import {Nav} from "./Nav";
+import {Profile} from "./features/profile/Profile";
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -23,9 +24,10 @@ root.render(
       <Nav />
 
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/news" element={<News />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   </Provider>

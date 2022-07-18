@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 
 import loginReducer from '../features/login/loginSlice';
 import newsReducer from '../features/news/newsSlice';
+import profileReducer from '../features/profile/profileSlice';
 
 export const history = createBrowserHistory()
 
@@ -11,6 +12,7 @@ const reducer = {
   router: connectRouter(history),
   login: loginReducer,
   news: newsReducer,
+  profile: profileReducer,
 };
 
 const preloadedState = {};

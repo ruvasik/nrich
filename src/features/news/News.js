@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {getNewsAsync, selectNews, selectStatus} from "./newsSlice";
-
-import styles from './News.module.css';
 import moment from "moment";
+import styles from './News.module.css';
 
 export function News() {
   const dispatch = useDispatch();

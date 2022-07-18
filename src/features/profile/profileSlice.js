@@ -1,39 +1,37 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { authLogin } from './loginAPI';
+import { authProfile } from './profileAPI';
 
 const initialState = {
   logged: sessionStorage.getItem('logged') === 'yes' ? 'yes': null,
   status: null,
 };
 
-export const loginAsync = createAsyncThunk(
-  'login/authLogin',
+export const profileAsync = createAsyncThunk(
+  'profile/authProfile',
   async (data) => {
-    const response = await authLogin(data);
+    const response = await authProfile(data);
     if (response.status > 399 && response.status < 500) return 'no';
     else if (response.status === 200) return 'yes';
     else return null;
   }
 );
 
-export const loginSlice = createSlice({
-  name: 'login',
+export const profileSlice = createSlice({
+  name: 'profile',
   initialState,
   reducers: {},
 
   extraReducers: (builder) => {
     builder
-      .addCase(loginAsync.pending, (state) => {
+      .addCase(profileAsync.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(loginAsync.fulfilled, (state, action) => {
+      .addCase(profileAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        sessionStorage.setItem('logged', action.payload);
+        console.log('11', action);
         state.logged = action.payload;
       });
   },
 });
 
-export const selectLogged = (state) => state.login.logged;
-
-export default loginSlice.reducer;
+export default profileSlice.reducer;

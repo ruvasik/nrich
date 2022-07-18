@@ -1,0 +1,10 @@
+.credentials {
+  display: inline-block;
+  border: 1px solid #000;
+  margin: 20px;
+  padding: 20px;
+}
+
+.section {
+  border: 1px solid #000;
+}
