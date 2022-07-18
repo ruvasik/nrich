@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { authProfile } from './profileAPI';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {authProfile} from './profileAPI';
 
 const initialState = {
-  logged: sessionStorage.getItem('logged') === 'yes' ? 'yes': null,
+  logged: sessionStorage.getItem('logged') === 'yes' ? 'yes' : null,
   status: null,
 };
 

@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { authLogin } from './loginAPI';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import {authLogin} from './loginAPI';
 
 const initialState = {
-  logged: sessionStorage.getItem('logged') === 'yes' ? 'yes': null,
+  logged: sessionStorage.getItem('logged') === 'yes' ? 'yes' : null,
   status: null,
 };
 

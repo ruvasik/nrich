@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {getNewsAsync, selectNews, selectStatus} from "./newsSlice";
 import moment from "moment";
 import styles from './News.module.css';
@@ -16,7 +16,7 @@ export function News() {
 
   return (
     <div>
-      { isLoading && 'Loading...'}
+      {isLoading && 'Loading...'}
       {
         news.map(item => (
           <div key={item.url} className={styles.article}>

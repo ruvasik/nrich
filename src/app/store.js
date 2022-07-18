@@ -1,6 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
+import {configureStore} from "@reduxjs/toolkit";
 import {connectRouter, routerMiddleware} from "connected-react-router";
-import { createBrowserHistory } from "history";
+import {createBrowserHistory} from "history";
 
 import loginReducer from '../features/login/loginSlice';
 import newsReducer from '../features/news/newsSlice';

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 import {selectLogged} from "../login/loginSlice";
 
 import {useNavigate} from "react-router-dom";
@@ -10,7 +10,7 @@ export function Profile() {
 
   useEffect(() => {
     if (isLogged !== 'yes')
-      navigate('/login', { replace: true });
+      navigate('/login', {replace: true});
   }, [isLogged]);
 
   if (isLogged !== 'yes') return false;
