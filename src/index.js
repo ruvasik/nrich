@@ -1,19 +1,19 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './app/store';
-import Home from './features/Home';
-import './index.css';
-import {Login} from "./features/login/Login";
-import {News} from "./features/news/News";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 
+import Home from './features/Home';
+import {Login} from "./features/login/Login";
+import {News} from "./features/news/News";
 import {Nav} from "./Nav";
 import {Profile} from "./features/profile/Profile";
+import { store } from './app/store';
+import './index.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

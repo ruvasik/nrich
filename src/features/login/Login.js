@@ -5,19 +5,19 @@ import {useNavigate} from "react-router-dom";
 import styles from './Login.module.css';
 
 const renderForm = (onSubmit, status) => (
-  <section className={styles.section}>
+  <form className={styles.form} onSubmit={onSubmit}>
     { status === 'no' && 'Имя пользователя или пароль введены неверно' }
-    <form className={styles.form} onSubmit={onSubmit}>
-      <div className={styles.row}>
-        <input type="text" name="email" className={styles.input} />
-      </div>
-      <div className={styles.row}>
-        <input type="password" name="password" className={styles.input} />
-      </div>
+    <div className={styles.row}>
+      <input type="text" name="email" placeholder="email" className={styles.input} />
+    </div>
+    <div className={styles.row}>
+      <input type="password" name="password" placeholder="password" className={styles.input} />
+    </div>
 
+    <div className={styles.row}>
       <input type="submit" value="Login" />
-    </form>
-  </section>
+    </div>
+  </form>
 )
 
 export function Login() {
