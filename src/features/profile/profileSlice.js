@@ -28,7 +28,6 @@ export const profileSlice = createSlice({
       })
       .addCase(profileAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        console.log('11', action);
         state.logged = action.payload;
       });
   },
